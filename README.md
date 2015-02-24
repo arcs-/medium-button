@@ -5,9 +5,9 @@ You can still use the default buttons, MediumButton will just give you the abiit
 
 # Basic usage
 
-![screenshot](https://raw.github.com/daviferreira/medium-editor/master/demo/img/medium-editor.jpg)
+![screenshot](https://raw.githubusercontent.com/arcs-/MediumButton/master/screenshot.png)
 
-__demo__: [http://daviferreira.github.io/medium-editor/](http://daviferreira.github.io/medium-editor/)
+Demo: [http://stillhart.biz/project/MediumButton/](http://stillhart.biz/project/MediumButton/)
 
 ### Installation
 
