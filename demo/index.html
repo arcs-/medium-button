@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Patrick Stillhart" />
+    <title>MediumButton</title>
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/medium-editor.css">
+	<link rel="stylesheet" href="css/themes/default.css" id="medium-editor-theme">
+	
+	<link rel="stylesheet" href="css/arcs.css">
+	<script src="js/highlight.pack.js"></script>
+
+    <script src="js/medium-editor.min.js"></script>
+    <script src="../src/MediumButton.js"></script>
+</head>
+
+<body>
+    <div class="top-bar">
+        Theme:
+        <select id="sel-themes">
+            <option value="themes/default" selected>default</option>
+            <option value="themes/roman">roman</option>
+            <option value="themes/mani">mani</option>
+            <option value="themes/flat">flat</option>
+            <option value="themes/bootstrap">bootstrap</option>
+        </select>
+    </div>
+    <div id="desc">
+        <h2>What is this?</h2>
+        <p>
+            MediumButton extends your <a href="https://github.com/daviferreira/medium-editor" target="_blank">Medium Editor</a> with the possibility add buttons in an easy way.
+		</p><p>
+			My buttons in the example are maybe odd and aren't that great. But I hope you become an impression.
+        </p>
+		
+		<a id="MediumButtonV2.zip" class="ActionButton g download"><i class="fa fa-download"></i>  Download</a>
+        <a href="mailto:patrick@stillhart.biz?Subject=Bug in MediumButton" class="ActionButton o" target="_blank"><i class="fa fa-bug"></i>  Report Bug</a><br>
+		<a class=version>Version 1.1</a>
+		
+		
+        <h2>How does it work?</h2>
+        <p>
+            Just inlucde the script after MediumEditor
+        </p>
+<pre><code class="html">&lt;script src=&quot;js/medium-editor.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/MediumButton.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+        <p>
+           <h5>Attributes for default button</h5>
+        </p>
+<pre><code class="javascript">label: '&lt;b&gt;B&lt;/b&gt;', // Button Label: HTML and Font-Awesome possible  
+start: '&lt;b&gt;',      // Beginning of the selection 
+end:   '&lt;/b&gt;'      // End of the selection 
+  
+//You can do a more compact version...
+'b': new MediumButton({label:'&lt;b&gt;B&lt;/b&gt;', start:'&lt;b&gt;', end:'&lt;/b&gt;'}),
+</code></pre> 
+       
+            <h5>Attributes for action button </h5>
+			 <p>You can add start and end as well ;) </p>
+       
+ <pre><code class="javascript">label: '&lt;b&gt;h1&lt;/b&gt;',             //Button Label(same)  
+action: function(html, mark){   //HTML(String) is the selected Text
+           alert('hello :)');   //MARK(Boolean) is already marked
+           return html;}        //never forget return HTML!
+        }						  
+		  
+</code></pre>
+
+         <h5>Example:</h5>
+        
+<pre><code class="javascript">var editor = new MediumEditor('.editor', {
+    buttons: ['b', 'h2', 'code', 'warning', 'pop'],
+    extensions: {
+        'b':  new MediumButton({label:'BOLD', start:'&lt;b&gt;', end:'&lt;/b&gt;'}),
+        'h2': new MediumButton({label:'h2', start:'&lt;h2&gt;', end:'&lt;/h2&gt;'}),
+       
+	// The Code for the Button JavaScript is below
+
+       'warning': new MediumButton({
+          label: '&lt;i class=&quot;fa fa-exclamation-triangle&quot;&gt;&lt;/i&gt;',
+          start: '&lt;div class=&quot;warning&quot;&gt;',
+          end:   '&lt;/div&gt;'
+       }),
+	   
+       'pop': new MediumButton({
+          label:'POP', 
+          action: function(html, mark){
+                    alert('hello :)'); 
+                    return html; 
+                  }
+        })
+    }
+});
+</code></pre>
+
+		<br>
+		<h5>Syntax highlighting </h5>
+		<p>
+            Syntax highlighting is possible. You just need to add a Plugin (e.g. <a href="http://prismjs.com/" target="_blank">Prism</a> or <a href="http://highlightjs.org/" target="_blank">highlight.js</a> etc.).
+			Here is an example for JavaScript with highlight.js.
+        </p>
+		<pre><code class="javascript">'JS': new MediumButton({
+  label: '&lt;i&gt;JavaScript&lt;/i&gt;',
+  start: '&lt;pre&gt;&lt;code&gt;',
+  end: '&lt;/code&gt;&lt;/pre&gt;',
+  action: function(html, mark){
+            if(mark) return '&lt;!--'+html+'--&gt;' + hljs.highlight('javascript', html.substring(3, html.length - 4).replace(/&lt;\/p&gt;&lt;p&gt;/g, &quot;\n&quot;).replace(/&lt;/g, &quot;&lt;&quot;).replace(/&gt;/g, &quot;&gt;&quot;)).value;
+            return html.split('--&gt;')[0].split('&lt;!--').join('');
+          }
+}),
+		</code></pre>
+
+
+    </div>
+    <div id="container">
+        <h1>MediumButton</h1>
+        <h3>for Medium Editor</h3>
+        <div class="editable">
+            <p>My father's family name being Pirrip, and my Christian name Philip, my infant tongue could make of both names nothing longer or more explicit than Pip. So, I called myself Pip, and came to be called Pip.</p>
+            <p>I give Pirrip as my father's family name, on the authority of his tombstone and my sister,Mrs. Joe Gargery, who married the blacksmith. As I never saw my father or my mother, and never saw any likeness of either of them (for their days were long before the days of photographs), my first fancies regarding what they were like were unreasonably derived from their tombstones. The shape of the letters on my father's, gave me an odd idea that he was a square, stout, dark man, with curly black hair. From the character and turn of the inscription, Also Georgiana Wife of the Above, I drew a childish conclusion that my mother was freckled and sickly. To five little stone lozenges, each about a foot and a half long, which were arranged in a neat row beside their grave, and were sacred to the memory of five little brothers of mine, who gave up trying to get a living, exceedingly early in that universal struggle,I am indebted for a belief I religiously entertained that they had all been born on their backs with their hands in their trousers-pockets, and had never taken them out in this state of existence.</p>
+            <p>Ours was the marsh country, down by the river, within, as the river wound, twenty miles of the sea. My first most vivid and broad impression of the identity of things seems to me to have been gained on a memorable raw afternoon towards evening. At such a time I found out for certain that this bleak place overgrown with nettles was the churchyard; and that Philip Pirrip, late of this parish, and also Georgiana wife of the above, were dead and buried; and that Alexander, Bartholomew, Abraham, Tobias, and Roger, infant children of the aforesaid, were also dead and buried; and that the dark flat wilderness beyond the churchyard, intersected with dikes and mounds and gates, with scattered cattle feeding on it, was the marshes; and that the low leaden line beyond was the river; and that the distant savage lair from which the wind was rushing was the sea; and that the small bundle of shivers growing afraid of it all and beginning to cry, was Pip.</p>
+        </div>
+
+        <small><a style="color: #333;" target="_blank" href="http://www.goodreads.com/reader/475-great-expectations">Story Source</a></small>
+    </div>
+
+<script>
+    var editor = new MediumEditor('.editable', {
+            buttons: ['bold', 'h2', 'JS', 'warning', 'pop'],
+            extensions: {
+				'pop': new MediumButton({label:'POP', action: function(html, mark){alert('hello :)'); return html;}}),
+				'bold': new MediumButton({label:'BOLD', start:'<b>', end:'</b>'}),
+				'h2': new MediumButton({label:'h2', start:'<h2>', end:'</h2>'}),
+
+                'JS': new MediumButton({
+                    label: '<i>JavaScript</i>',
+                    start: '<pre><code>',
+                    end: '</code></pre>',
+					action: function(html, mark){
+						if(mark) return '<!--'+html+'-->' + hljs.highlight('javascript', html.substring(3, html.length - 4).replace(/<\/p><p>/g, "\n").replace(/&lt;/g, "<").replace(/&gt;/g, ">")).value;									
+						return html.split('-->')[0].split('<!--').join('');		
+					}
+				}),
+				
+                'warning': new MediumButton({
+                    label: '<i class="fa fa-exclamation-triangle"></i>',
+                    start: '<div class="warning">',
+                    end: '</div>'
+                })
+			}	
+        }),
+        cssLink = document.getElementById('medium-editor-theme');
+
+		document.getElementById('sel-themes').addEventListener('change', function () {
+            cssLink.href = 'css/' + this.value + '.css';
+        });
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44179530-2', 'auto');
+  ga('send', 'pageview');
+  
+  var elems=document.querySelectorAll(".download");for(var i=0;i<elems.length;i++){elems[i].addEventListener("click",function(){var 
+  e=document.createElement("iframe");e.style.display="none";e.src="download.php?filename="+this.id;document.body.appendChild(e)},false)}
+  
+  hljs.initHighlightingOnLoad();
+	
+</script>
+</body>
+</html>

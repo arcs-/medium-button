@@ -5,14 +5,14 @@ You can still use the default buttons, MediumButton will just give you the abiit
 
 # Basic usage
 
-![screenshot](https://raw.githubusercontent.com/arcs-/MediumButton/master/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/arcs-/MediumButton/master/demo/screenshot.png)
 
 Demo: [http://stillhart.biz/project/MediumButton/](http://stillhart.biz/project/MediumButton/)
 
 ### Installation
 
-* Download the [latest MediumEditor release](https://github.com/daviferreira/medium-editor/releases) 
-* Download the [latest MediumButton release](https://github.com/daviferreira/medium-editor/releases) 
+Download the [latest MediumEditor release](https://github.com/daviferreira/medium-editor/releases) 
+Download the [latest MediumButton release](https://github.com/arcs-/MediumButton/releases) 
 
 The next step is to reference the scripts
 

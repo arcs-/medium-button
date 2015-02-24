@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'ProximaNovaBlack';
+    src: url('../fonts/proximanova-black-webfont.ttf') format('truetype'),
+         url('../fonts/proximanova-black-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ProximaNovaRegular';
+    src: url('../fonts/proximanova-regular-webfont.ttf') format('truetype'),
+         url('../fonts/proximanova-regular-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: ProximaNovaRegular, Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    line-height: 30px;
+}
+*:focus {
+    outline: none;
+}
+::selection {
+  background: #ffb7b7; 
+}
+::-moz-selection {
+  background: #ffb7b7; 
+}
+#desc {
+	position: absolute;
+	width: 690px;
+	top: 90px;
+	right:70px;
+	background: #F8F8F8;
+	padding: 0 20px;
+}
+pre {
+	font-size: 15px;
+	background: #E0E0E0;
+	padding:5px;
+	line-height:120%;
+	color:white;
+}
+.ActionButton {
+	text-decoration:none;
+	color:white;
+	padding: 7px 12px;
+	line-height:140px;
+	cursor:pointer;
+}
+.g {
+	background-color:#00D132;
+}
+.o {
+	background-color:#FF7000;
+}
+.version {
+	-webkit-margin-before: 0;
+	margin-top: -50px;
+	margin-bottom: 50px;
+	display: block;
+	padding-left: 2px;
+	font-size: 17px;
+}
+#container {
+    width: 800px;
+	max-width:100%;
+    margin: 100px 150px;
+}
+.warning {
+	color:#B40404;
+	font-weight:bold;
+	display:inline-block;
+}
+.top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    z-index: 10;
+    padding: 10px;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, .8);
+    box-shadow: 0 0 4px #000;
+    box-sizing: border-box;
+    color: #ccc;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+h1,h2,h3,h4,h5,h6 {
+	-webkit-margin-after: 0.2em;
+}
+h1 {
+    font-family: ProximaNovaBlack, Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    text-align: center;
+	font-size: 60px;
+    letter-spacing: -2px;
+	-webkit-margin-after: 0;
+}
+h3 {
+	-webkit-margin-before: 0.2em;
+    font-weight: normal;
+    text-align: center;
+	font-size: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    letter-spacing: -2px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+#desc p {
+    margin-bottom: 40px;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0.5em;
+	font-size:18px;
+	max-width:560px;
+}
+
+b {
+    font-family: ProximaNovaBlack, Helvetica, Arial, sans-serif;
+}
+
+blockquote {
+    display: block;
+    padding-left: 20px;
+    border-left: 6px solid #df0d32;
+}
+
+@media only screen 
+and (max-width : 1740px) {
+	#desc {
+		right: 0;
+	}	
+	#container {
+		width: calc(100% - 735px);
+		margin: 100px 0;
+	}
+
+}
