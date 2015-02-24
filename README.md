@@ -12,7 +12,9 @@ Demo: [http://stillhart.biz/project/MediumButton/](http://stillhart.biz/project/
 ### Installation
 
 Download the [latest MediumEditor release](https://github.com/daviferreira/medium-editor/releases) 
+
 Download the [latest MediumButton release](https://github.com/arcs-/MediumButton/releases) 
+
 
 The next step is to reference the scripts
 
