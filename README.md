@@ -1,7 +1,7 @@
 # MediumButton
 MediumButton extends your Medium Editor with the possibility to add more buttons.
 
-You can still use the default buttons, MediumButton will just give you the abiity to add more and custom buttons
+You can still use the default buttons, MediumButton will just give you the ability to add more and custom buttons
 
 # Basic usage
 
@@ -11,9 +11,8 @@ Demo: [http://stillhart.biz/project/MediumButton/](http://stillhart.biz/project/
 
 ### Installation
 
-Download the [latest MediumEditor release](https://github.com/daviferreira/medium-editor/releases) 
-
-Download the [latest MediumButton release](https://github.com/arcs-/MediumButton/releases) 
+* Download the [latest MediumEditor release](https://github.com/daviferreira/medium-editor/releases) 
+* Download the [latest MediumButton release](https://github.com/arcs-/MediumButton/releases) 
 
 
 The next step is to reference the scripts
@@ -27,13 +26,13 @@ The next step is to reference the scripts
 
 Follow the steps on the [MediumEditor Page](https://github.com/daviferreira/medium-editor)
 
+
 Then you can then setup your custom buttons
 
 HTML buttons
 ```javascript
 // This creates a buttons which make text bold
 'b': new MediumButton({label:'<b>B</b>', start:'<b>', end:'</b>'})
-
 
 label: '<b>B</b>', // Button Label: HTML and Font-Awesome is possible  
 start: '<b>',      // Beginning of the selection 
@@ -46,30 +45,30 @@ JavaScript buttons
 // This creates a buttons which makes a popup
 'pop': new MediumButton({label:'<b>Hello</b>', action: function(html, mark){alert('hello'); return html;}})
 
-
 label: '<b>Hello</b>',          //Button Label -> same as in HTML button 
                                 //Action can be an javascript function
 action: function(html, mark){   //HTML(String) is the selected Text
-           alert('hello :)');   //MARK(Boolean) is already marked
+           alert('hello');   //MARK(Boolean) is already marked
            return html;}        //never forget return new HTML!
         }						  
 
 ```
 
-Add them to MediumButton
+Add them to MediumEditor
 ```javascript
  // Remember the indicator befor each Button
  // 'pop': new MediumButto...
  
- // add this to your 'buttons' just like a normal one
+ // add this to your 'buttons' just like a normal button
 
  buttons: ['pop', 'b', 'h2', 'warning']
  
  // add the code for the button as an extensions
- // Seperat them with a " , "
+ // seperatet with a " , "
  
   extensions: {
         'b':  new MediumButton({label:'BOLD', start:'<b>', end:'</b>'}),
+        // ...
   }     
  
 ```
@@ -84,18 +83,18 @@ Remember to add a " , " between the buttons
 var editor = new MediumEditor('.editor', {
     buttons: ['b', 'h2', 'warning', 'pop'],
     extensions: {
-        // Compacct
+        // compact
         'b':  new MediumButton({label:'BOLD', start:'<b>', end:'</b>'}),
         'h2': new MediumButton({label:'h2', start:'<h2>', end:'</h2>'}),
 
-       // Expaned
+       // expanded
        'warning': new MediumButton({
           label: '<i class="fa fa-exclamation-triangle"></i>',
           start: '<div class="warning">',
           end:   '</div>'
        }),
 	   
-	// With JavaScript
+	// with JavaScript
        'pop': new MediumButton({
           label:'POP', 
           action: function(html, mark){
