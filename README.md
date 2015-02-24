@@ -29,7 +29,7 @@ Follow the steps on the [MediumEditor Page](https://github.com/daviferreira/medi
 
 Then you can then setup your custom buttons
 
-HTML buttons
+#### HTML buttons
 ```javascript
 // This creates a buttons which make text bold
 'b': new MediumButton({label:'<b>B</b>', start:'<b>', end:'</b>'})
@@ -40,7 +40,7 @@ end:   '</b>'      // End of the selection
 
 ```
 
-JavaScript buttons
+#### JavaScript buttons
 ```javascript
 // This creates a buttons which makes a popup
 'pop': new MediumButton({label:'<b>Hello</b>', action: function(html, mark){alert('hello'); return html;}})
@@ -54,7 +54,7 @@ action: function(html, mark){   //HTML(String) is the selected Text
 
 ```
 
-Add them to MediumEditor
+#### Add them to MediumEditor
 ```javascript
  // Remember the indicator befor each Button
  // 'pop': new MediumButto...
@@ -110,7 +110,7 @@ var editor = new MediumEditor('.editor', {
 ```
 
 
-# Syntax highlighting
+### Syntax highlighting
 
 Syntax highlighting is possible but not that easy(for now). You need to add an other Script like Prism or highlight.js. Here is an example for JavaScript with highlight.js.
 
