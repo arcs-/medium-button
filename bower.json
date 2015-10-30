@@ -1,0 +1,24 @@
+{
+  "name": "MediumButton",
+  "version": "1.0.0",
+  "homepage": "https://github.com/arcs-/MediumButton",
+  "authors": [
+    "Patrick Stillhart <patrick@stillhart.biz>"
+  ],
+  "description": "MediumButton extends your Medium Editor with the possibility to add more buttons.",
+  "main": "src/MediumButton.js",
+  "moduleType": [],
+  "keywords": [
+    "medium",
+    "editor",
+    "medium editor"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
