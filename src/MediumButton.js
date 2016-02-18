@@ -44,6 +44,7 @@ function MediumButton(options) {
 		
 		
 		var range;
+    var fragment;
         //Set new Content
         if (sel.getRangeAt && sel.rangeCount) {
             range = window.getSelection().getRangeAt(0);
