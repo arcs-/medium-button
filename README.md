@@ -1,88 +1,89 @@
-# MediumButton
-MediumButton extends your Medium Editor with the possibility to add more buttons.
-
-You can still use the default buttons, MediumButton will just give you the ability to add more and custom buttons
-
-# Basic usage
-
 ![screenshot](https://raw.githubusercontent.com/arcs-/MediumButton/master/demo/screenshot.png)
 
-Demo: [http://stillhart.biz/project/MediumButton/](http://stillhart.biz/project/MediumButton/)
 
-### Installation
+# MediumButton
 
-* Download the [latest MediumEditor release](https://github.com/daviferreira/medium-editor/releases) 
-* Download the [latest MediumButton release](https://github.com/arcs-/MediumButton/releases) 
+MediumButton extends MediumEditor with your custom buttons.
 
+You can still use the default ones, MediumButton just gives you the ability to add custom buttons.
 
-The next step is to reference the scripts
+> I could use your support to further develop this package. :)
+
+[Demo](http://stillhart.biz/project/MediumButton/)
+
+## Installation
+
+- Download the [latest MediumEditor release](https://github.com/daviferreira/medium-editor/releases)
+- Download the [latest MediumButton release](https://github.com/arcs-/medium-button/releases)
+
+Next copy and reference the scripts (located in the dist folder)
 
 ```html
-<script src="js/medium-editor.js"></script>
-<script src="js/MediumButton.min.js"></script>
+<script src="js/medium-editor.min.js"></script>
+<script src="js/medium-button.min.js"></script>
 ```
 
-### Usage
+## Usage
 
 Follow the steps on the [MediumEditor Page](https://github.com/daviferreira/medium-editor)
-
-
 Then you can then setup your custom buttons
 
-#### HTML buttons
+### HTML buttons
+
 ```javascript
 // This creates a buttons which make text bold
 'b': new MediumButton({label:'<b>B</b>', start:'<b>', end:'</b>'})
 
-label: '<b>B</b>', // Button Label: HTML and Font-Awesome is possible  
-start: '<b>',      // Beginning of the selection 
-end:   '</b>'      // End of the selection 
-
+label: '<b>B</b>', // Button Label: HTML and Font-Awesome is possible
+start: '<b>',      // Beginning of the selection
+end:   '</b>'      // End of the selection
 ```
 
-#### JavaScript buttons
+### JavaScript buttons
+
 ```javascript
 // This creates a buttons which makes a popup
-'pop': new MediumButton({label:'<b>Hello</b>', action: function(html, mark){alert('hello'); return html;}})
+'pop': new MediumButton({label:'<b>Hello</b>', action: function(html, mark){alert('hello');return html}})
 
-label: '<b>Hello</b>',          //Button Label -> same as in HTML button 
-                                //Action can be an javascript function
-action: function(html, mark, parent){   //HTML(String) is the selected Text
-           alert('hello');   //MARK(Boolean) is already marked
-	   console.log(parent); // PARENT node 
-           return html;}        //never forget return new HTML!
-        }						  
+// Explanation
+label: '<b>Hello</b>',          // Button Label -> same as in HTML button
+                                // Action can be any javascript function
+action: function(html, mark, parent){   
+                               // HTML(String) is the selected Text
+           alert('hello')      // MARK(Boolean) true if marked
+           console.log(parent) // PARENT(node) the elements parent ndoe
 
+
+           return html         // don't forget return the new HTML!
+        }
 ```
 
-#### Add them to MediumEditor
-```javascript
- // Remember the indicator befor each Button
- // 'pop': new MediumButto...
- 
- // add this to your 'buttons' just like a normal button
+### Add them to MediumEditor
 
- buttons: ['pop', 'b', 'h2', 'warning']
- 
+```javascript
+// Remember the name for the button infront of each
+// add it to your 'toolbar buttons' just like a normal button
+toolbar: {
+   buttons: ['bold', 'h2', 'JS', 'warning', 'pop']
+ },
+
  // add the code for the button as an extensions
  // seperatet with a " , "
- 
-  extensions: {
-        'b':  new MediumButton({label:'BOLD', start:'<b>', end:'</b>'}),
-        // ...
-  }     
- 
+extensions: {
+  'b':  new MediumButton({label:'BOLD', start:'<b>', end:'</b>'}),
+  // ...
+}
 ```
 
 and you're done.
 
 ## Example
 
-Remember to add a " , " between the buttons
-
 ```javascript
 var editor = new MediumEditor('.editor', {
-    buttons: ['b', 'h2', 'warning', 'pop'],
+    toolbar: {
+      buttons: ['b', 'h2', 'warning', 'pop']
+    },
     extensions: {
         // compact
         'b':  new MediumButton({label:'BOLD', start:'<b>', end:'</b>'}),
@@ -94,22 +95,20 @@ var editor = new MediumEditor('.editor', {
           start: '<div class="warning">',
           end:   '</div>'
        }),
-	   
-	// with JavaScript
+
+    // with JavaScript
        'pop': new MediumButton({
-          label:'POP', 
+          label:'POP',
           action: function(html, mark, parent){
-                    alert('hello :)'); 
-                    return html; 
+                    alert('hello :)')
+                    return html
                   }
         })
-        
-        
+
+
     }
-});
-
+})
 ```
-
 
 ### Syntax highlighting
 
