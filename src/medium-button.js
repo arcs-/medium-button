@@ -95,6 +95,8 @@ MediumButton.prototype.checkState = function(node) {
 
 	if (this.options.start != '' && html.indexOf(this.options.start) > -1 && html.indexOf(this.options.end) > -1) {
 		this.button.classList.add('medium-editor-button-active')
+	} else {
+		this.button.classList.remove('medium-editor-button-active')
 	}
 
 }
