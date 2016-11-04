@@ -47,8 +47,9 @@ end:   '</b>'      // End of the selection
 
 label: '<b>Hello</b>',          //Button Label -> same as in HTML button 
                                 //Action can be an javascript function
-action: function(html, mark){   //HTML(String) is the selected Text
+action: function(html, mark, parent){   //HTML(String) is the selected Text
            alert('hello');   //MARK(Boolean) is already marked
+	   console.log(parent); // PARENT node 
            return html;}        //never forget return new HTML!
         }						  
 
@@ -97,7 +98,7 @@ var editor = new MediumEditor('.editor', {
 	// with JavaScript
        'pop': new MediumButton({
           label:'POP', 
-          action: function(html, mark){
+          action: function(html, mark, parent){
                     alert('hello :)'); 
                     return html; 
                   }
@@ -119,7 +120,7 @@ Syntax highlighting is possible but not that easy(for now). You need to add an o
   label: '<i>JavaScript</i>',
   start: '<pre><code>',
   end: '</code></pre>',
-  action: function(html, mark){
+  action: function(html, mark, parent){
             if(mark) return '<!--'+html+'-->' + hljs.highlight('javascript', html.substring(3, html.length - 4).replace(/<\/p><p>/g, "\n").replace(/</g, "<").replace(/>/g, ">")).value;
             return html.split('-->')[0].split('<!--').join('');
           }
