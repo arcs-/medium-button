@@ -9,7 +9,7 @@
         <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/medium-editor.css">
-        <link rel="stylesheet" href="css/themes/default.css" id="medium-editor-theme">
+        <link rel="stylesheet" href="css/default.min.css" id="medium-editor-theme">
 
         <script src="js/medium-editor.min.js"></script>
         <script src="../src/medium-button.js"></script>
@@ -21,10 +21,11 @@
             Theme:&nbsp;
             <select id="sel-themes">
                 <option value="themes/default" selected>default</option>
-                <option value="themes/roman">roman</option>
                 <option value="themes/mani">mani</option>
                 <option value="themes/flat">flat</option>
                 <option value="themes/bootstrap">bootstrap</option>
+                <option value="themes/tim">tim</option>
+                <option value="themes/beagle">beagle</option>
             </select>
         </div>
 
@@ -83,14 +84,27 @@
 
             })
 
-            var cssLink = document.getElementById('medium-editor-theme')
+            cssLink = document.getElementById('medium-editor-theme')
             document.getElementById('sel-themes').addEventListener('change', function () {
-                cssLink.href = 'css/' + this.value + '.css'
+                cssLink.href = 'https://yabwe.github.io/medium-editor/bower_components/medium-editor/dist/css/' + this.value + '.min.css'
             })
         </script>
 
         <script>
-!function(a,b,c,d,e,f,g){a.GoogleAnalyticsObject=e,a[e]=a[e]||function(){(a[e].q=a[e].q||[]).push(arguments)},a[e].l=1*new Date,f=b.createElement(c),g=b.getElementsByTagName(c)[0],f.async=1,f.src=d,g.parentNode.insertBefore(f,g)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-44179530-2","auto"),ga("send","pageview");
+            !function (a, b, c, d, e, f, g) {
+                a.GoogleAnalyticsObject = e,
+                a[e] = a[e] || function () {
+                    (a[e].q = a[e].q || []).push(arguments)
+                },
+                a[e].l = 1 * new Date,
+                f = b.createElement(c),
+                g = b.getElementsByTagName(c)[0],
+                f.async = 1,
+                f.src = d,
+                g.parentNode.insertBefore(f, g)
+            }(window, document, "script", "//www.google-analytics.com/analytics.js", "ga"),
+            ga("create", "UA-44179530-2", "auto"),
+            ga("send", "pageview");
         </script>
 
     </body>

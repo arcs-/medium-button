@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900');
 body {
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 19px;
+    font-size: 22px;
 }
 
 *:focus {outline: none}
@@ -9,7 +9,7 @@ body {
 #text {
     width: 800px;
     max-width: 60%;
-    margin: 100px auto;
+    margin: 0 auto;
 }
 
 small a {
@@ -25,37 +25,37 @@ small a {
 }
 
 .top-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: auto;
-    z-index: 10;
-    padding: 10px;
-    background-color: #000;
-    background-color: rgba(0, 0, 0, .8);
-    box-shadow: 0 0 4px #000;
-    box-sizing: border-box;
-    color: #ccc;
-    font-size: 12px;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: auto;
+  z-index: 10;
+  padding: 10px;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, .8);
+  box-shadow: 0 0 4px #000;
+  box-sizing: border-box;
+  color: #ccc;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 h1 {
     text-align: center;
     font-size: 60px;
-    letter-spacing: -2px;
+    font-weight: 900;
+    letter-spacing: -4px;
     -webkit-margin-after: 0;
 }
 
 h3 {
-    -webkit-margin-before: 0em;
+    -webkit-margin-before: -.5em;
     font-weight: normal;
     text-align: center;
     font-size: 25px;
     margin-bottom: 40px;
     padding-bottom: 20px;
-    letter-spacing: -2px;
     border-bottom: 1px solid #dbdbdb;
 }
