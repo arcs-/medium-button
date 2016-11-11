@@ -7,7 +7,7 @@ MediumButton extends MediumEditor with your custom buttons.
 
 You can still use the default ones, MediumButton just gives you the ability to add custom buttons.
 
-> I could use your support to further develop this package. :)
+> I need your support to further develop this package. :)
 
 [Demo](http://stillhart.biz/project/MediumButton/)
 
@@ -58,13 +58,15 @@ action: function(html, mark, parent){
         }
 ```
 
+(you can combine the two)
+
 ### Add them to MediumEditor
 
 ```javascript
 // Remember the name for the button infront of each
 // add it to your 'toolbar buttons' just like a normal button
 toolbar: {
-   buttons: ['bold', 'h2', 'JS', 'warning', 'pop']
+   buttons: ['b', 'h2', 'JS', 'warning', 'pop']
  },
 
  // add the code for the button as an extensions

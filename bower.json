@@ -1,13 +1,16 @@
 {
   "name": "medium-button",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "homepage": "https://github.com/arcs-/medium-button",
   "authors": [
     "Patrick Stillhart <patrick@stillhart.biz>"
   ],
   "description": "MediumButton extends Medium Editor with your custom buttons.",
   "main": "src/medium-button.js",
-  "moduleType": [],
+  "repository": "https://github.com/arcs-/medium-button",
+  "dependencies": {
+    "medium-editor": "^4.0.0"
+  },
   "keywords": [
     "medium",
     "editor",
