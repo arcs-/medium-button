@@ -123,3 +123,10 @@ function getCurrentSelection() {
 	return html
 
 }
+
+if (typeof exports !== 'undefined') {
+  if (typeof module !== 'undefined' && module.exports) {
+    exports = module.exports = MediumButton
+  }
+  exports.MediumButton = MediumButton
+}
