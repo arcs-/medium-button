@@ -23,6 +23,12 @@ Next copy and reference the scripts (located in the dist folder)
 <script src="js/medium-button.min.js"></script>
 ```
 
+Or via NPM
+
+```
+npm install --save-dev medium-button
+```
+
 ## Usage
 
 Follow the steps on the [MediumEditor Page](https://github.com/daviferreira/medium-editor)
