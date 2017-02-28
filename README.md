@@ -13,36 +13,43 @@ You can still use the default ones, MediumButton just gives you the ability to a
 
 ## Installation
 
+### Manual
 - Download the [latest MediumEditor release](https://github.com/daviferreira/medium-editor/releases)
 - Download the [latest MediumButton release](https://github.com/arcs-/medium-button/releases)
 
-Next copy and reference the scripts (located in the dist folder)
-
-```html
-<script src="js/medium-editor.min.js"></script>
-<script src="js/medium-button.min.js"></script>
-```
-
-Or via NPM
+ 
+### npm
 
 ```
 npm install --save-dev medium-button
+```
+### Bower
+```
+bower install --save medium-button
 ```
 
 ## Usage
 
 Follow the steps on the [MediumEditor Page](https://github.com/daviferreira/medium-editor)
-Then you can then setup your custom buttons
+Then you can then setup your custom buttons.
+
+### Include script
+Copy and reference the scripts (located in the dist folder):
+
+```html
+<script src="js/medium-button.min.js"></script>
+```
 
 ### HTML buttons
 
-```javascript
-// This creates a buttons which make text bold
-'b': new MediumButton({label:'<b>B</b>', start:'<b>', end:'</b>'})
+This creates a buttons which make text bold.
 
-label: '<b>B</b>', // Button Label: HTML and Font-Awesome is possible
-start: '<b>',      // Beginning of the selection
-end:   '</b>'      // End of the selection
+```javascript
+'b': new MediumButton({
+	label:'<b>B</b>', // Button Label: HTML and Font-Awesome is possible
+	start:'<b>', // Beginning of the selection
+	end:'</b>' // End of the selection
+})
 ```
 
 ### JavaScript buttons
